@@ -20,7 +20,7 @@ function ident(){
 
     var token = '';
 
-    fetch("http://0.0.0.0:8055/auth/login", requestOptions)
+    fetch("http://10.0.52.198:8055/auth/login", requestOptions)
         .then(response => response.text())
         .then(result => {
 
@@ -45,7 +45,7 @@ function information(token){//récupère le rôle de l'utilisateur ainsi que son
         redirect: 'follow'
       };
       
-      fetch("http://0.0.0.0:8055/users/me?access_token="+token+"&fields=role,first_name", requestOptions)
+      fetch("http://10.0.52.198:8055/users/me?access_token="+token+"&fields=role,first_name", requestOptions)
         .then(response => response.text())
         .then(result => {
 
@@ -67,13 +67,12 @@ function accueil(role){
 
     if (role == "bdacbb31-bd6c-4911-b01b-9027d931c7b7"){//RH
         
-        document.location.href="../Rh/Choix_Rh/choix_RH";
+        document.location.href="Vue/Rh/Choix_Rh/choix_RH";
 
     }
     else if (role == "30596a0d-25e2-4de6-b461-4c6d1748b9f2"){//Eleve
 
-
-        document.location.href="../Collaborateur/Choix_Eleve/choix_Eleve";
+        document.location.href="Vue/Collaborateur/Choix_Eleve/choix_Eleve";
 
     }
 }

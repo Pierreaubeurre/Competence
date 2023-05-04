@@ -6,7 +6,7 @@ function menu(){
       };
 
       
-      fetch("http://0.0.0.0:8055/users/me?access_token="+document.cookie+"&fields=role", requestOptions)//Vérifie le rôle de l'utilisateur connecté
+      fetch("http://10.0.52.198:8055/users/me?access_token="+document.cookie+"&fields=role", requestOptions)//Vérifie le rôle de l'utilisateur connecté
         .then(response => response.text())
         .then(result => {
             

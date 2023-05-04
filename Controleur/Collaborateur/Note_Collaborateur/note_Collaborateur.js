@@ -9,7 +9,7 @@ function idUt() {
     redirect: 'follow'
   };
 
-  fetch("http://0.0.0.0:8055/users/me?access_token=" + document.cookie + "&fields=id", requestOptions)
+  fetch("http://10.0.52.198:8055/users/me?access_token=" + document.cookie + "&fields=id", requestOptions)
     .then(response => response.text())
     .then(result => {
 
@@ -31,7 +31,7 @@ function passer(idUtilisateur) {
     redirect: 'follow'
   };
 
-  fetch("http://0.0.0.0:8055/items/Passer?access_token=LgBBrR6ALrc623KbFD7n5vGwH9o1ala3&filter[idCollaborateur][_eq]=" + idUtilisateur + "&fields=idCritere,Note", requestOptions)
+  fetch("http://10.0.52.198:8055/items/Passer?access_token=LgBBrR6ALrc623KbFD7n5vGwH9o1ala3&filter[idCollaborateur][_eq]=" + idUtilisateur + "&fields=idCritere,Note", requestOptions)
     .then(response => response.text())
     .then(result => {
 
@@ -67,7 +67,7 @@ function recup(Json) {
     redirect: 'follow'
   };
   
-  fetch("http://0.0.0.0:8055/items/Critere?access_token=LgBBrR6ALrc623KbFD7n5vGwH9o1ala3&fields=idEvaluation&filter[idCritere][_in]=1,3", requestOptions)
+  fetch("http://10.0.52.198:8055/items/Critere?access_token=LgBBrR6ALrc623KbFD7n5vGwH9o1ala3&fields=idEvaluation&filter[idCritere][_in]=1,3", requestOptions)
     .then(response => response.text())
     //.then(result => console.log(result))
     .catch(error => console.log('error', error));

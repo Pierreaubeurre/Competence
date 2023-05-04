@@ -1,16 +1,20 @@
 // Script pour remettre en place le projet diretus rapidement et de manière précise. A lancer après la création du projet directus à partir du SQL
 
+  //var ip="0.0.0.0:8055" //ip localhost
+  var ip="10.0.52.198:8055" //ip proxmox
+
+  // var tokenAdmin="hTC68ROOBNITP4sD3CyS_YzM9UIEnM4j" //token admin localhost
+  let tokenAdmin="HXGPAu5COWJCPqCgAFgodIX_Mbq_nq0Z" //token proxmox
 
 //Création des utilisateurs
 function utilisateur()
 {
-    var tokenAdmin="hTC68ROOBNITP4sD3CyS_YzM9UIEnM4j"
 
-    var idBastien="206046e9-42aa-4bc4-89ac-bbcc00da5a92"
-    var idGaetan="3d238e91-4774-47aa-86ba-ff745d401400"
-    var idTibo="92ce0479-178d-4def-8cbe-97a28f363f26"
-    var idFitz="3aca1622-3cc3-4e4d-a44e-6f4576206257"
-    var idFlament="e0ed1fb7-c31b-42b1-8eea-ecac7628b4b6"
+    let idBastien="206046e9-42aa-4bc4-89ac-bbcc00da5a92"
+    let idGaetan="3d238e91-4774-47aa-86ba-ff745d401400"
+    let idTibo="92ce0479-178d-4def-8cbe-97a28f363f26"
+    let idFitz="3aca1622-3cc3-4e4d-a44e-6f4576206257"
+    let idFlament="e0ed1fb7-c31b-42b1-8eea-ecac7628b4b6"
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -60,7 +64,7 @@ function utilisateur()
       redirect: 'follow'
     };
     
-    fetch("http://0.0.0.0:8055/users?access_token="+tokenAdmin, requestOptions)
+    fetch("http://"+ip+"/users?access_token="+tokenAdmin, requestOptions)
       .then(response => response.text())
       .then(result => {
 
@@ -110,7 +114,7 @@ function role(tokenAdmin,idGaetan,idBastien,idTibo,idFitz,idFlament)
       redirect: 'follow'
     };
     
-    fetch("http://0.0.0.0:8055/roles?access_token="+tokenAdmin, requestOptions)
+    fetch("http://"+ip+"/roles?access_token="+tokenAdmin, requestOptions)
       .then(response => response.text())
       .then(result => {
 
@@ -578,7 +582,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://0.0.0.0:8055/permissions?access_token="+tokenAdmin, requestOptions)
+fetch("http://"+ip+"/permissions?access_token="+tokenAdmin, requestOptions)
   .then(response => response.text())
   .then(result => console.log("ça marche"))
   .catch(error => console.log('error', error));

@@ -5,7 +5,7 @@ function passer() {//lit le tableau passer
         redirect: 'follow'
       };
       
-      fetch("http://0.0.0.0:8055/items/Passer?access_token="+document.cookie, requestOptions)
+      fetch("http://10.0.52.198:8055/items/Passer?access_token="+document.cookie, requestOptions)
         .then(response => response.text())
         .then(result => {
 

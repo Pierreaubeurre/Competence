@@ -13,7 +13,7 @@ function Liste_competence(){
         redirect: 'follow'
       };
       
-      fetch("http://0.0.0.0:8055/items/Competence?access_token="+document.cookie+"&fields=Nom,idCompetence", requestOptions)
+      fetch("http://10.0.52.198:8055/items/Competence?access_token="+document.cookie+"&fields=Nom,idCompetence", requestOptions)
         .then(response => response.text())
         .then(result =>{
 
@@ -263,7 +263,7 @@ function recupIdRh(nom){
         redirect: 'follow'
       };
       
-      fetch("http://0.0.0.0:8055/users/me?access_token=WBsjGc01lPopLDFcURmfzh_ZqN5g90vA&fields=id", requestOptions)
+      fetch("http://10.0.52.198:8055/users/me?access_token=WBsjGc01lPopLDFcURmfzh_ZqN5g90vA&fields=id", requestOptions)
         .then(response => response.text())
         .then(result => {
 
@@ -300,7 +300,7 @@ function ajoutEvaluation(nom,idRh){
         redirect: 'follow'
     };
 
-    fetch("http://0.0.0.0:8055/items/Evaluation?access_token="+document.cookie, requestOptions)
+    fetch("http://10.0.52.198:8055/items/Evaluation?access_token="+document.cookie, requestOptions)
         .then(response => response.text())
         .then(result =>{
                         resp = JSON.parse(result);
@@ -376,7 +376,7 @@ function ajoutCritere(multiCrit,multiComp){// Ajoute les critères
       redirect: 'follow'
     };
     
-    fetch("http://0.0.0.0:8055/items/Critere?access_token="+document.cookie, requestOptions)
+    fetch("http://10.0.52.198:8055/items/Critere?access_token="+document.cookie, requestOptions)
       .then(response => response.text())
       .then(result =>
         {
@@ -442,7 +442,7 @@ function ajoutAssocier(associer){
       redirect: 'follow'
     };
     
-    fetch("http://0.0.0.0:8055/items/Associer?access_token="+document.cookie, requestOptions)
+    fetch("http://10.0.52.198:8055/items/Associer?access_token="+document.cookie, requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));

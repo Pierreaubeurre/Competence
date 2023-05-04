@@ -68,7 +68,7 @@ function lecture(resp){//lit la réponse
 
 function recuperation(){//récupère les informations de évaluation sous la forme d'un tableau
 
-    var lien ="http://0.0.0.0:8055/items/Evaluation?access_token="+document.cookie //problème de récupération du cookie
+    var lien ="http://10.0.52.198:8055/items/Evaluation?access_token="+document.cookie //problème de récupération du cookie
 
     var requestOptions = {
         method: 'GET',
